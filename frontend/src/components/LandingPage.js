@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-import data from '../data';
 
 export default function LandingPage() {
+
+  const [products, setProducts] = useState([]);
+
+  // Component Did Mount
+  useEffect(() => {
+
+    // Function to fetch data from backend
+    const fetchData = async () => {
+      const { data }= await axios.get('/api/products');
+      setProducts(data);
+    }
+
+    // Call fetchData
+    fetchData();
+
+    return () => {
+      //
+    };
+  }, [])
+
   return (
     <div>
       <ul className="products">
         {
-          data.products.map(product =>
+          products.map(product =>
             (<li key={product._id}>
               <div className="product">
                 <Link to={'/product/' + product._id}>

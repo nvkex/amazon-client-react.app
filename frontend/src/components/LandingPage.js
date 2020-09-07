@@ -14,13 +14,14 @@ export default function LandingPage() {
   useEffect(() => {
     dispatch(listProducts());
     return () => {
-      //
+      // 
     };
-  })
+  }, [])
 
-  return loading ? <div>Loading...</div>:
-  error ?<div>{error}</div>:(
+  return (
     <div>
+      {loading ? <div>Loading...</div>:
+      error ?<div>{error}</div>:(
       <ul className="products">
         {
           products.map(product =>
@@ -43,6 +44,7 @@ export default function LandingPage() {
         }
 
       </ul>
+      )}
     </div>
-  );
+  )
 }

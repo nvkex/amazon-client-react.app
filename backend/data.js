@@ -8,7 +8,8 @@ var data = {
             price: 600,
             brand: 'Nike',
             rating: 4.5,
-            numReviews: 10
+            numReviews: 10,
+            countInStock: 0,
         },
         {
             _id: '2',
@@ -18,7 +19,8 @@ var data = {
             price: 700,
             brand: 'Nike',
             rating: 4.7,
-            numReviews: 10
+            numReviews: 10,
+            countInStock: 5,
         },
         {
             _id: '3',
@@ -28,7 +30,8 @@ var data = {
             price: 800,
             brand: 'Nike',
             rating: 4.3,
-            numReviews: 10
+            numReviews: 10,
+            countInStock: 6,
         }
     ]
 }
